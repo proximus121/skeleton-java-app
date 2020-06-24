@@ -21,6 +21,11 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void invalid() throws Exception {
+        assertThat(queryProcessor.process("who wrote morometii"), containsString("Shakespeare"));
+    }
+
+    @Test
     public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
         assertThat(queryProcessor.process("test"), is(""));
     }
